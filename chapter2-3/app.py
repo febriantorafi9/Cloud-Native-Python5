@@ -216,6 +216,7 @@ def create_user():
 def resource_not_found(error):
     return make_response(jsonify({'error': 'Resource not found!'}), 404)
 
+@app.route('/api/v1/users/<int:user_id>', methods=['GET'])
 def get_user(user_id):
     return list_user(user_id)
 def list_user(user_id):
